@@ -83,6 +83,7 @@ namespace Servicios.api.Libreria.Repository
             long totalDocuments = await _collection.CountDocumentsAsync(FilterDefinition<TDocument>.Empty);
             var totalPages = Convert.ToInt32( Math.Ceiling( Convert.ToDecimal( totalDocuments / pagination.PageSize)));
             pagination.PageQuantity = totalPages;
+            pagination.TotalRows = Convert.ToInt32(totalDocuments);
             return pagination;
         }
 
