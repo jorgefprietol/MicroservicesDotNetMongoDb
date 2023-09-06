@@ -15,5 +15,8 @@ namespace Servicios.api.Libreria.Core.Entities
         public string Apellido { get; set; }
         [BsonElement("gradoAcademico")]
         public string GradoAcademico { get; set; }
+
+        [BsonElement("nombreCompleto")]
+        public string NombreCompleto { get; set; }
     }
 }
