@@ -1,11 +1,17 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Servicios.api.Seguridad.Core.Entities;
+using Servicios.api.Seguridad.Core.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +31,16 @@ namespace Servicios.api.Seguridad
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<SeguridadContexto>(opt =>
+            {
+                opt.UseSqlServer(Configuration.GetConnectionString("ConexionDB"));
+            });
+
+            var builder = services.AddIdentityCore<Usuario>();
+            var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+            identityBuilder.AddEntityFrameworkStores<SeguridadContexto>();
+            identityBuilder.AddSignInManager<SignInManager<Usuario>>();
+            services.TryAddSingleton<ISystemClock, SystemClock>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
