@@ -51,6 +51,7 @@ namespace Servicios.api.Seguridad
             services.AddAutoMapper(typeof(Register.UsuarioRegisterHandler));
 
             services.AddScoped<IJwtGenerator, JwtGenerator>();
+            services.AddScoped<IUsuarioSesion, UsuarioSesion>();
 
             services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Register>());
 
