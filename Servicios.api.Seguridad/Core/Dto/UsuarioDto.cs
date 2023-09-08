@@ -11,5 +11,6 @@ namespace Servicios.api.Seguridad.Core.Application.Dto
         public string Username { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public string Token { get; set; }
     }
 }
