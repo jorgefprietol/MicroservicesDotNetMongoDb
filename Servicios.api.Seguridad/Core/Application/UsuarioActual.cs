@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Servicios.api.Seguridad.Core.Application.Dto;
 using Servicios.api.Seguridad.Core.Entities;
@@ -32,8 +33,10 @@ namespace Servicios.api.Seguridad.Core.Application
             }
             public async Task<UsuarioDto> Handle(UsuarioActualCommand request, CancellationToken cancellationToken)
             {
+
                 var usuario = await _userManager.FindByNameAsync(_iusuarioSesion.GetUsuarioSesion());
-                if(usuario != null)
+
+                if (usuario != null)
                 {
                     var usuarioDTO = _mapper.Map<Usuario, UsuarioDto>(usuario);
                     usuarioDTO.Token = _ijwtGeneratos.CreateToken(usuario);

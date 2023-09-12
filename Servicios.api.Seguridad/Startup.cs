@@ -2,8 +2,10 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Servicios.api.Seguridad.Core.Application;
 using Servicios.api.Seguridad.Core.Entities;
@@ -20,6 +23,8 @@ using Servicios.api.Seguridad.Core.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Servicios.api.Seguridad
@@ -36,6 +41,7 @@ namespace Servicios.api.Seguridad
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Register>());
             services.AddDbContext<SeguridadContexto>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("ConexionDB"));
@@ -53,8 +59,24 @@ namespace Servicios.api.Seguridad
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUsuarioSesion, UsuarioSesion>();
 
-            services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Register>());
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("VteLKW55nbdpTb8vjYHNI0B4NA81ORUr"));
+            
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+            {
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = key,
+                    ValidateAudience = false,
+                    ValidateIssuer = false
+                };
+            });
+            services.AddDistributedMemoryCache();
 
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(1800);
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Servicios.api.Seguridad", Version = "v1" });
@@ -72,9 +94,8 @@ namespace Servicios.api.Seguridad
             }
 
             app.UseRouting();
-
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -17,8 +17,8 @@ namespace Servicios.api.Seguridad
     {
         public static void Main(string[] args)
         {
-            //CreateHostBuilder(args).Build().Run();
-            var hostserver = CreateHostBuilder(args).Build();
+            CreateHostBuilder(args).Build().Run();
+/*            var hostserver = CreateHostBuilder(args).Build();
             using(var contexto = hostserver.Services.CreateScope())
             {
                 var services = contexto.ServiceProvider;
@@ -34,7 +34,8 @@ namespace Servicios.api.Seguridad
                     loggin.LogError(e, "Error al insertar un usuario");
                 }
             }
-            hostserver.Run();
+            hostserver.Run();*/
+            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -42,6 +43,8 @@ namespace Servicios.api.Seguridad
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
                 });
+
     }
 }
