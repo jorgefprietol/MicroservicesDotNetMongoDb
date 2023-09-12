@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.33927.289
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Libreria", "Servicios.api.Libreria\Servicios.api.Libreria.csproj", "{504CBA4F-C575-464C-9E4C-EBE9AEBAB36E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.api.Seguridad", "Servicios.api.Seguridad\Servicios.api.Seguridad.csproj", "{7F423E34-8268-4ACB-96D5-7ADCB4B808D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Seguridad", "Servicios.api.Seguridad\Servicios.api.Seguridad.csproj", "{7F423E34-8268-4ACB-96D5-7ADCB4B808D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.api.Gateway", "Servicios.api.Gateway\Servicios.api.Gateway.csproj", "{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7F423E34-8268-4ACB-96D5-7ADCB4B808D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F423E34-8268-4ACB-96D5-7ADCB4B808D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F423E34-8268-4ACB-96D5-7ADCB4B808D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
