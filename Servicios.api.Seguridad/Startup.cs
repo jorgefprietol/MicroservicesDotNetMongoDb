@@ -71,6 +71,13 @@ namespace Servicios.api.Seguridad
                     ValidateIssuer = false
                 };
             });
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsRule", rule =>
+                {
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
+                });
+            });
             services.AddDistributedMemoryCache();
 
             services.AddSession(options =>
@@ -94,6 +101,7 @@ namespace Servicios.api.Seguridad
             }
 
             app.UseRouting();
+            app.UseCors("CorsRule");
             app.UseAuthorization();
             app.UseSession();
             app.UseEndpoints(endpoints =>

@@ -41,6 +41,14 @@ namespace Servicios.api.Gateway
                     ValidateIssuer = false
                 };
             });
+
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsRule", rule =>
+                {
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +66,7 @@ namespace Servicios.api.Gateway
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseCors("CorsRule");
             app.UseAuthentication();
             app.UseOcelot();
             app.UseAuthorization();
