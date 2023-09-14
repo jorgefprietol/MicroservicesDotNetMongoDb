@@ -16,10 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kunernetes", "kunernetes", 
 		microservice-libreria-service.yml = microservice-libreria-service.yml
 		microservice-seguridad-deploy.yml = microservice-seguridad-deploy.yml
 		microservice-seguridad-pod.yml = microservice-seguridad-pod.yml
+		microservice-seguridad-service.yml = microservice-seguridad-service.yml
 		mongo-deploy.yml = mongo-deploy.yml
 		mongo-pod.yml = mongo-pod.yml
+		mongo-service.yml = mongo-service.yml
 		sqlserver-deploy.yml = sqlserver-deploy.yml
 		sqlserver-pod.yml = sqlserver-pod.yml
+		sqlserver-service.yml = sqlserver-service.yml
 	EndProjectSection
 EndProject
 Global
