@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
     - name: gateway-app
-      image: jorgefprietol/gateway:latest
+      image: jorgefprietol/serviciosapigateway:latest
       ports:
         - containerPort: 80

@@ -20,6 +20,6 @@ spec:
     spec:
      containers:
       - name: gateway-app
-        image: jorgefprietol/gateway:v3.#{Build.BuildId}#
+        image: jorgefprietol/serviciosapigateway:v3.#{Build.BuildId}#
         ports:
           - containerPort: 80

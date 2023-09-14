@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: microservice-seguridad-app
-      image: jorgefprietol/seguridad:latest
+      image: jorgefprietol/serviciosapiseguridad:latest
       ports:
         - containerPort: 80
       env:
