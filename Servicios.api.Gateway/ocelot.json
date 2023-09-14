@@ -26,11 +26,7 @@
         }
       ],
       "UpstreamPathTemplate": "/autor",
-      "UpstreamHttpMethod": [ "POST", "GET" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
       "DownstreamPathTemplate": "/api/LibreriaAutor/{id}",
@@ -110,11 +106,7 @@
         }
       ],
       "UpstreamPathTemplate": "/libro",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/Libro/{id}",
@@ -126,11 +118,7 @@
         }
       ],
       "UpstreamPathTemplate": "/libro/{id}",
-      "UpstreamHttpMethod": [ "GET", "UPDATE", "DELETE" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "GET", "UPDATE", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/Libro/paginationFilter",
@@ -142,11 +130,7 @@
         }
       ],
       "UpstreamPathTemplate": "/libro/paginationFilter",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "POST" ]
     },
     {
       "DownstreamPathTemplate": "/api/Libro/pagination",
@@ -158,11 +142,7 @@
         }
       ],
       "UpstreamPathTemplate": "/libro/pagination",
-      "UpstreamHttpMethod": [ "POST" ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
+      "UpstreamHttpMethod": [ "POST" ]
     }
   ]
 }

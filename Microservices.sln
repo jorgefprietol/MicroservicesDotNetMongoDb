@@ -7,7 +7,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Libreria", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Seguridad", "Servicios.api.Seguridad\Servicios.api.Seguridad.csproj", "{7F423E34-8268-4ACB-96D5-7ADCB4B808D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Servicios.api.Gateway", "Servicios.api.Gateway\Servicios.api.Gateway.csproj", "{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Servicios.api.Gateway", "Servicios.api.Gateway\Servicios.api.Gateway.csproj", "{C5FBE6E1-DEFF-4906-88ED-DFE6D96B7718}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "kunernetes", "kunernetes", "{DD240695-4E7C-4D22-84BB-082EF8FC441C}"
+	ProjectSection(SolutionItems) = preProject
+		microservice-libreria-deploy.yml = microservice-libreria-deploy.yml
+		microservice-libreria-pod.yml = microservice-libreria-pod.yml
+		microservice-libreria-service.yml = microservice-libreria-service.yml
+		microservice-seguridad-deploy.yml = microservice-seguridad-deploy.yml
+		microservice-seguridad-pod.yml = microservice-seguridad-pod.yml
+		mongo-deploy.yml = mongo-deploy.yml
+		mongo-pod.yml = mongo-pod.yml
+		sqlserver-deploy.yml = sqlserver-deploy.yml
+		sqlserver-pod.yml = sqlserver-pod.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
