@@ -5,8 +5,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/autorGenerico",
@@ -21,8 +21,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/autor",
@@ -33,8 +33,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/autor/{id}",
@@ -49,8 +49,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/autor/paginationFilter",
@@ -65,8 +65,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8563"
+          "Host": "microservice-seguridad-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/usuario",
@@ -77,8 +77,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8563"
+          "Host": "microservice-seguridad-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/usuario/login",
@@ -89,8 +89,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8563"
+          "Host": "microservice-seguridad-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/usuario/registrar",
@@ -101,8 +101,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/libro",
@@ -113,8 +113,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/libro/{id}",
@@ -125,8 +125,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/libro/paginationFilter",
@@ -137,8 +137,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": "8562"
+          "Host": "microservice-libreria-service",
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/libro/pagination",
