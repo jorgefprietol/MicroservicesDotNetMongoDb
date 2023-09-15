@@ -4,7 +4,7 @@ metadata:
   name: mongo-deploy
   labels:
     name: mongo-deploy
-    app:  microservice
+    app:  microservice-libreria
 spec:
     replicas: 1
     selector:
