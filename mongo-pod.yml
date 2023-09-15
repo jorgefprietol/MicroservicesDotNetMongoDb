@@ -16,6 +16,6 @@ spec:
       - name: MONGO_INITDB_ROOT_USERNAME
         value: "jfpljfpl"
       - name: MONGO_INITDB_ROOT_PASSWORD
-        value: "$JfplJfpl2025"
+        value: "JfplJfpl2025"
       ports:
         - containerPort: 27017
