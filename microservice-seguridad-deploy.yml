@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: microservice-seguridad-app
-          image: jorgefprietol/serviciosapiseguridad:v3.#{Build.BuildId}#
+          image: jorgefprietol/serviciosapiseguridad:latest
           ports:
             - containerPort: 80
           env:
