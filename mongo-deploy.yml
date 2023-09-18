@@ -4,30 +4,30 @@ metadata:
   name: mongo-deploy
   labels:
     name: mongo-deploy
-    app:  microservice-libreria
+    app: microservice-libreria
 spec:
-    replicas: 1
-    selector:
-      matchLabels:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice-libreria
+      name: mongo-pod
+  template:
+    metadata:
+      name: mongo-pod
+      labels:
         app: microservice-libreria
         name: mongo-pod
-    template:
-        metadata:
-          name: mongo-pod
-          labels:
-            app: microservice-libreria
-            name: mongo-pod
-        spec:
-          containers:
-            - name: mongo
-              image: mongo:6.0
-              command:
-              - /bin/bash
-              - -c
-              env:
-              - name: MONGO_INITDB_ROOT_USERNAME
-                value: "jfpljfpl"
-              - name: MONGO_INITDB_ROOT_PASSWORD
-                value: "JfplJfpl2025"
-              ports:
-                - containerPort: 27017
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:6.0
+          command:
+            - /bin/bash
+            - -c
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: "jfpljfpl"
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              value: "JfplJfpl2025"

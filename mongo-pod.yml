@@ -10,12 +10,12 @@ spec:
     - name: mongo
       image: mongo:6.0
       command:
-      - /bin/bash
-      - -c
-      env:
-      - name: MONGO_INITDB_ROOT_USERNAME
-        value: "jfpljfpl"
-      - name: MONGO_INITDB_ROOT_PASSWORD
-        value: "JfplJfpl2025"
+        - /bin/bash
+        - -c
       ports:
         - containerPort: 27017
+      env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: "jfpljfpl"
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: "JfplJfpl2025"
