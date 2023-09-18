@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: mongo
-      image: mongo:6.0
+      image: mongo:latest
       command:
         - /bin/bash
         - -c
