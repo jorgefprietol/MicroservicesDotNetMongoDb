@@ -8,8 +8,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: http  80/TCP
-      targetPort: 80/TCP
+    - port: 80
+      targetPort: 80
       nodePort: 30010
   selector:
      app: gateway
