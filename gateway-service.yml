@@ -10,7 +10,7 @@ spec:
   ports:
     - port: http  80/TCP
       targetPort: 80/TCP
-      nodePort: http  30010/TCP
+      nodePort: 30010
   selector:
      app: gateway
      type: microservice
