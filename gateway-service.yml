@@ -8,9 +8,9 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 80
-      targetPort: 80
-      nodePort: 30010
+    - port: http  80/TCP
+      targetPort: 80/TCP
+      nodePort: http  30010/TCP
   selector:
      app: gateway
      type: microservice

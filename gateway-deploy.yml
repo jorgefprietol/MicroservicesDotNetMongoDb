@@ -22,4 +22,4 @@ spec:
       - name: gateway-app
         image: jorgefprietol/serviciosapigateway:latest
         ports:
-          - containerPort: 80
+          - containerPort: http  80/TCP
